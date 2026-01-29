@@ -2,22 +2,32 @@
 # Say hello to user
 print("hello, world")
 
-VS Code
+>>> hello, world
+
+Tip:
+Recommend use VS Code
 
 input ("Whats your name ?")
 print("hello, David")
 
+>>> Whats your name ?
 
 # Store input to a variable
 name = input ("Whats your name ?")
 print("hello, David")
+
+>>> hello, David
 
 # 
 name = input ("Whats your name ?")
 print("hello,")
 print(name)
 
+>>> hello,
+>>> David
 
+
+Tip:
 pseudocode using #comments to think in parts of the programming
 Example:
 
@@ -28,19 +38,28 @@ name = input ("Whats your name ?")
 print("hello,")
 print(name)
 
+>>> hello,
+>>> David
 
 # Ok, but missing space after the question and another one misssing after the hello
 name = input ("Whats your name ?")
 print("hello," + name)
 
+>>> hello,David
 
 # Correct version
 name = input ("Whats your name ? ")
 print("hello, " + name)
 
+>>> hello, David
+
 # Different way with same result - concatetening left with right sides
 name = input ("Whats your name ? ")
 print("hello,", name)
+
+>>> hello, David
+
+
 
 
 # https://docs.python.org/3.15/library/functions.html#print documentation of print function
@@ -48,6 +67,9 @@ print("hello,", name)
 name = input ("Whats your name ? ")
 print("hello, ")
 print(name)
+
+>>> hello,
+>>> David
 
 
 
@@ -68,31 +90,47 @@ name = input ("Whats your name ? ")
 print("hello, ", end="")
 print(name)
 
-# Testing anything in sep=""
+>>> hello, David
+
+# Testing anything in sep="" INCORRECT
 name = input ("Whats your name ? ")
 print("hello, ", sep="???")
 print(name)
 
+>>> hello,
+>>> David
+
+# Correct
+name = input ("Whats your name ? ")
+print("hello", name, sep=" ??? ")
+
+>>> hello ??? David
 
 
-
+Tip:
 '' Single is Python default
 "" You can use both
 
 # Not work - Invalid syntax 
 print("hello, "friend"")
 
+>>> SyntaxError: invalid syntax. Is this intended to be part of the string?
+
 # Correct - can use mixed quotes 
 print('hello, "friend"')
 
+>>> hello, "friend"
+
 # backslashes \ to refer a quote text
-print("hello, \"friend"\")
+print("hello, \"friend\"")
 
-
+>>> hello, "friend"
 
 # f{} format string
 name = input ("Whats your name ? ")
 print(f"hello, {name}")
+
+>>> hello, David
 
 
 # Remove whitespace from str
@@ -100,12 +138,18 @@ name = input ("Whats your name ? ")
 name = name.strip()
 print(f"hello, {name}")
 
+>      David     
+>>> hello, David
+
 
 # Capitalize users name only first letter
 name = input ("Whats your name ? ")
 name = name.strip()
 name = name.capitalize()
 print(f"hello, {name}")
+
+> david
+>>> hello, David
 
 
 
@@ -115,23 +159,43 @@ name = name.strip()
 name = name.title()
 print(f"hello, {name}")
 
+> david malan
+>>> hello, David Malan
+
 
 # Mixing functions
 name = input ("Whats your name ? ")
 name = name.strip().title()
 print(f"hello, {name}")
 
+> david malan
+>>> hello, David Malan
+
 # You can use them in diffrent way 
 name = input ("Whats your name ? ").strip().title()
 print(f"hello, {name}")
+
+> david malan
+>>> hello, David Malan
 
 
 
 # Split user's name into first and last name
 name = input ("Whats your name ? ").strip().title()
-first, last = name.split
+first, last = name.split()
 print(f"hello, {first}")
 
+> david malan
+>>> hello, David
+
+
+# Robust ChatGPT version  - can digit many last names without error
+name = input("What's your name? ").strip().title()
+first = name.split()[0]
+print(f"hello, {first}")
+
+> david malan one two
+>>> hello, David
 
 # --------------------------
 int - INTEGER numbers
@@ -142,6 +206,7 @@ int - INTEGER numbers
 % module operator - rest of dividion
 
 
+Tip:
 Interactive Mode
 Python interpretor - runs code imediatly
 >>>
@@ -169,6 +234,8 @@ y = input("What's y? ")
 z = x + y
 print (z)
 
+>1
+>2
 >>> result 12
 Because it is concateneting strings one with another - right side with left side it happens when you input anything in your pc, cellphone etc.. will be text string, even it seems like number, but when it comes from keyboard it is a string
 
@@ -180,6 +247,8 @@ y = input("What's y? ")
 z = int(x) + int(y)
 print (z)
 
+>1
+>2
 >>> result 3
 
 
@@ -194,6 +263,8 @@ y = int(input("What's y? "))
 
 print (x + y)
 
+>1
+>2
 >>> result 3
 
 Tip:
@@ -205,6 +276,8 @@ Tip:
 # 5 Example: Cleaner in one line of code
 print (int(input("What's x? "))+ int(input("What's y? ")))
 
+>1
+>2
 >>> result 3
 
 Tip: Is nicer but its a little complicated to get the idea
@@ -220,6 +293,8 @@ y = float(input("What's y? "))
 
 print (x + y)
 
+>1.2
+>3.4
 >>> result 4.6
 
 
@@ -234,6 +309,8 @@ z = round(x + y)
 
 print (z)
 
+>1.2
+>3.4
 >>> result 5
 
 
@@ -245,6 +322,8 @@ z = round(x + y)
 
 print (f"{z:,}")
 
+>999
+>1
 >>> 1,000
 
 
@@ -256,6 +335,8 @@ z = x / y
 
 print (z)
 
+>2
+>3
 >>> 0.66666666666666
 
 
@@ -268,6 +349,8 @@ z = round(x / y, 2)
 
 print (z)
 
+>2
+>3
 >>> 0.67
 
 
@@ -279,6 +362,8 @@ z = x / y
 
 print (f"{z:.2f}")
 
+>2
+>3
 >>> 0.67
 
 
@@ -416,6 +501,7 @@ def square(n):
 
 main()
 
+>3
 >>> x squared is 9
 
 
@@ -429,6 +515,7 @@ def square(n):
 
 main()
 
+>3
 >>> x squared is 9
 
 # 12 Example : Another way with pow
@@ -441,4 +528,5 @@ def square(n):
 
 main()
 
+>3
 >>> x squared is 9
