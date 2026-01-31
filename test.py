@@ -1,18 +1,30 @@
-SHOWS = [
-	" Avatar: the last airbender",
-	"Ben 10",
-	"Arthur",
-	" Spongebob Squarepants",
-	"Phineas and ferb",
-	"Kim possible",
-	"Jimmy Neutron",
-	"the Proud family"
-]
+def main():
+	difficulty = input("Difficult or Casual? ")
+	if not (difficulty == "Difficult" or difficulty == "Casual"):
+		print("Enter a valid difficulty")
+		return
 
-def main ():
-	cleaned_shows = []
-	for show in SHOWS:
-		cleaned_shows.append(show.strip().title())
-	print(', '.join(cleaned_shows))
+	player = input("Multiplayer or Single-player? ")
+	if not (player == "Multiplayer" or player == "Single-player"):
+		print("Enter a valid number of players")
+		return
 
-main()
+
+
+
+	if difficulty == "Difficult" and player == "Multiplayer":
+		recommend("Poker")
+	elif difficulty == "Difficult" and player == "Single-player":
+		recommend("Klondie")
+	elif difficulty == "Casual" and player == "Multiplayer":
+		recommend("Hearts")
+	else:
+		recommend("Clock")
+
+		
+
+
+def recommend (game):
+	print("You might like", game)
+
+main ()
