@@ -1,30 +1,21 @@
 def main():
-	difficulty = input("Difficult or Casual? ")
-	if not (difficulty == "Difficult" or difficulty == "Casual"):
-		print("Enter a valid difficulty")
-		return
+	number = get_number()
+	meow(number)
 
-	player = input("Multiplayer or Single-player? ")
-	if not (player == "Multiplayer" or player == "Single-player"):
-		print("Enter a valid number of players")
-		return
+def get_number():
+	while True:
+		n = int(input("What's n? "))
+		if n > 0:
+			break
+	return n
 
-
-
-
-	if difficulty == "Difficult" and player == "Multiplayer":
-		recommend("Poker")
-	elif difficulty == "Difficult" and player == "Single-player":
-		recommend("Klondie")
-	elif difficulty == "Casual" and player == "Multiplayer":
-		recommend("Hearts")
-	else:
-		recommend("Clock")
-
-		
+def meow(n):
+	for _ in range (n):
+		print("meow")
+		print("meow2")
+		print("meow3")
+		print("meow4")
+		print("meow5")
 
 
-def recommend (game):
-	print("You might like", game)
-
-main ()
+main()
