@@ -1,11 +1,17 @@
-students = [
-	{"name": "Hermione", "house": "Gryffindor", "patronus": "Otter"},
-	{"name": "Harry", "house": "Gryffindor", "patronus": "Stag"},
-	{"name": "Ron", "house": "Gryffindor", "patronus": "Jack Russel terrier"},
-	{"name": "Draco", "house": "Slytherin", "patronus": None} # None when is empty
-]
-
-for student in students:
-	print(student["name"], student["house"], student["patronus"], sep=", ") # can print each data you want
+def main():
+	print_square(30)
 
 
+def print_square(size):
+	
+	# For each row in square
+	for i in range(size):
+
+		# For each brick in row
+		for j in range(size):
+
+			# Print brick
+			print("#", end="")
+		print()
+
+main()
